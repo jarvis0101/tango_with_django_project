@@ -5,9 +5,15 @@
  <html>
 
      <head>
-         <title>Rango</title>
+       <title>
+            Rango -
+             {% block title_block %}
+                Homepage
+            {% endblock %}
+        </title>
      </head>
 
+{% block body_block %}
     <body>
        <h1>Rango says...</h1>
        <div>
@@ -21,7 +27,9 @@
             <ul>
             {% for category in categories %}
                 <li>
-                  <a href="/rango/category/{{ category.slug }}/">{{ category.name }}</a>
+                  <a href="{% url 'rango:show_category' category.slug %}">
+                    {{ category.name }}
+                  </a>
                 </li>
             {% endfor %}
             </ul>
@@ -55,3 +63,4 @@
     </body>
 
 </html>
+{% endblock %}

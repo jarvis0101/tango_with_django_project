@@ -4,10 +4,16 @@
 <html>
 
     <head>
-        <title>Rango</title>
+      <title>
+           Rango -
+            {% block title_block %}
+               About Rango
+           {% endblock %}
+       </title>
     </head>
 
-    <body>
+
+{% block body_block %}
           <h1>Rango says...</h1>
 
           <div>
@@ -23,3 +29,4 @@
       </body>
 
   </html>
+{% endblock %}
